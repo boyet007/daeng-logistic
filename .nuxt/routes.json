@@ -1,0 +1,16 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "D:\\\\Latihan\\\\daeng-logistic\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_127bbbf0"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\Latihan\\\\daeng-logistic\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2d1a7ef1"
+  }
+]
