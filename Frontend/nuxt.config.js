@@ -39,7 +39,8 @@ export default {
         // Doc: https://oruga.io/documentation/#nuxt
         "@oruga-ui/oruga/nuxt",
         "@nuxtjs/axios",
-        "@nuxtjs/auth"
+        "@nuxtjs/auth",
+        "bootstrap-vue/nuxt"
     ],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
