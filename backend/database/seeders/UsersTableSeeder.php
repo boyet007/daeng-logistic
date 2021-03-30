@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 class UsersTableSeeder extends Seeder
 {

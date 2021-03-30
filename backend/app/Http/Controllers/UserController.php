@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Lumen\Routing\Controller as BaseController;
-use App\Models\User;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\User;
 
-class UserController extends BaseController
+
+class UserController extends Controller
 {
     public function index()
     {
@@ -41,7 +41,7 @@ class UserController extends BaseController
             'email' => $request->email,
             'password' => app('hash')->make($request->password), //PASSWORDNYA KITA ENCRYPT
             'phone_number' => $request->phone_number,
-            'api_token' => 'jfeijigjigehjieou489325i25i2rijh2tn',  //BAGIAN INI HARUSNYA KOSONG KARENA AKAN TERISI JIKA USER LOGIN
+            // 'api_token' => 'test', //BAGIAN INI HARUSNYA KOSONG KARENA AKAN TERISI JIKA USER LOGIN
             'role' => $request->role,
             'status' => $request->status
         ]);
