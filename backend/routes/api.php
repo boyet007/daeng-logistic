@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FleetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,13 +36,6 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::patch('{id}', [UserController::class, 'update']);
         Route::delete('/{id}', [UserController::class, 'destroy']);
     });
-    // Route::group(['prefix' => '/categories'], function() {
-    //     Route::get('/', [CategoryController::class, 'index']);
-    //     Route::post('/', [CategoryController::class, 'store']);
-    //     Route::get('/{id}', [CategoryController::class, 'edit']);
-    //     Route::put('/{id}', [CategoryController::class, 'update']);
-    //     Route::delete('/{id}', [CategoryController::class, 'destroy']);
-    // });
     Route::resource('categories', CategoryController::class)->except(['create', 'show']);
-
+    Route::resource('fleets', FleetController::class)->except(['create']);\
 });
