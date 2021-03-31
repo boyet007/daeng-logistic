@@ -23,9 +23,13 @@ Route::post('/reset', [UserController::class, 'sendResetToken']);
 Route::put('/reset/{token}', [UserController::class, 'verifyResetPassword']);
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/users', [UserController::class, 'index']);
-    Route::post('/users', [UserController::class, 'store']);
-    Route::get('/users/{id}', [UserController::class, 'edit']);
-    Route::patch('/users/{id}', [UserController::class, 'update']);
-    Route::delete('/users/{id}', [UserController::class, 'destroy']);
+    Route::get('/login', [UserController::class, 'getUserLogin']);
+    Route::get('/logout', [UserController::class, 'logout']);
+    Route::group(['prefix' => '/users'], function () {
+        Route::get('/', [UserController::class, 'index']);
+        Route::post('/', [UserController::class, 'store']);
+        Route::get('/{id}', [UserController::class, 'edit']);
+        Route::patch('{id}', [UserController::class, 'update']);
+        Route::delete('/{id}', [UserController::class, 'destroy']);
+    });
 });

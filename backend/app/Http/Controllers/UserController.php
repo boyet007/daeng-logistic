@@ -98,7 +98,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        unlink(base_path('public/images/' . $user->photo));
+        if ($user->photo) {
+            unlink(base_path('public/images/' . $user->photo));
+        }
         $user->delete();
         return response()->json(['status' => 'success']);
     }
@@ -150,7 +152,7 @@ class UserController extends Controller
     {
         //VALIDASI PASSWORD HARUS MIN 6
         $this->validate($request, [
-            'password' => 'required|string|min:6'
+            'password' => 'nullable|string|min:6',
         ]);
 
         //CARI USER BERDASARKAN TOKEN YANG DITERIMA
@@ -159,8 +161,23 @@ class UserController extends Controller
         if ($user) {
             //UPDATE PASSWORD USER TERKAIT
             $user->update(['password' => app('hash')->make($request->password)]);
+            //HAPUS RESET TOKEN
+            $user->update(['reset_token' => null]);
             return response()->json(['status' => 'success']);
         }
         return response()->json(['status' => 'error']);
+    }
+
+    public function getUserLogin(Request $request)
+    {
+        $user = Auth::user();
+        return response()->json(['status' => 'success', 'data' => $user]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::user()->update(['api_token' => null]); //UPDATE VALUENYA JADI NULL
+        Auth::logout();
+        return response()->json(['status' => 'success']);
     }
 }
