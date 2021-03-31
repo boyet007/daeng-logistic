@@ -18,9 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/reset', [UserController::class, 'sendResetToken']);
+Route::put('/reset/{token}', [UserController::class, 'verifyResetPassword']);
 
-
-Route::group(['middleware' => 'auth.api'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/users', [UserController::class, 'store']);
     Route::get('/users/{id}', [UserController::class, 'edit']);
