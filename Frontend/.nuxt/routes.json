@@ -2,13 +2,13 @@
   {
     "name": "login",
     "path": "/login",
-    "component": "D:\\\\Latihan\\\\daeng-logistic\\\\Frontend\\\\pages\\\\login.vue",
+    "component": "D:\\\\Latihan\\\\daeng-logistic\\\\frontend\\\\pages\\\\login.vue",
     "chunkName": "pages/login"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Latihan\\\\daeng-logistic\\\\Frontend\\\\pages\\\\index.vue",
+    "component": "D:\\\\Latihan\\\\daeng-logistic\\\\frontend\\\\pages\\\\index.vue",
     "chunkName": "pages/index"
   }
 ]

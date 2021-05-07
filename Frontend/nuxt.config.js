@@ -65,7 +65,7 @@ export default {
     },
     //SET BASE URL PROJECT API KITA, SEHINGGA SEMUA REQUEST AKAN MENGARAH KESANA
     axios: {
-        baseURL: "http://dw-logistik-api.test/"
+        baseURL: "http://daeng-logistic-api.test/api/"
     },
     //MIDDLEWARE UNTUK MENGECEK SUDAH LOGIN ATAU BELUM, KITA SET GLOBAL
     router: {

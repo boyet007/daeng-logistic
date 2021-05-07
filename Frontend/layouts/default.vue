@@ -18,6 +18,7 @@
 	export default {
 		data() {
 			return {
+
 				// isAuth: false SEHINGGA VARIABLE INI DIDISABLE SAJA ATAU BISA DIHAPUS
 			}
 		},
@@ -27,6 +28,6 @@
 		components: {
 			'app-sidebar': Sidebar,
 			'app-header': Header
-		}
+		},
 	}
 </script>

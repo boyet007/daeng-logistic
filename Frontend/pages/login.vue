@@ -60,8 +60,8 @@ export default {
         return {
             //VARIABLE UNTUK MENAMPUNG INPUTAN USER
             auth: {
-                email: null,
-                password: null
+                email: 'admin@daengweb.id',
+                password: 'Wynne321'
             }
         }
     },

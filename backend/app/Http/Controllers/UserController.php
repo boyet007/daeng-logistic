@@ -107,6 +107,7 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+
         //VALIDASI INPUTAN USER
         //DENGAN KETENTUAN EMAIL HARUS ADA DI TABLE USERS DAN PASSWORD MIN 6
         $this->validate($request, [
